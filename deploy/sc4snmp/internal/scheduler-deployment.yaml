@@ -17,7 +17,7 @@ spec:
       containers:
         - name: sc4-snmp-scheduler
           image: snmp_test:latest
-          imagePullPolicy: Always
+          imagePullPolicy: Never
           args:
             [
               "--log=WARN",
