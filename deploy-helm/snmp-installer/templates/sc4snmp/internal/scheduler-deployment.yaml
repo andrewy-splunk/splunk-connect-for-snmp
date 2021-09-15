@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sc4snmp-scheduler
-          image: ghcr.io/splunk/splunk-connect-for-snmp-poller:{{ .Values.worker.version }}
+          image: {{ .Values.worker.image }}:{{ .Values.worker.version }}
           imagePullPolicy: Always
           args:
             [

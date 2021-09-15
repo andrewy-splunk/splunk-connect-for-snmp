@@ -131,6 +131,7 @@ otel:
 worker:
   logLevel: "WARN"
   version: 1
+  image: ghcr.io/splunk/splunk-connect-for-snmp-poller
   resources:
     limits:
       cpu: 200m
