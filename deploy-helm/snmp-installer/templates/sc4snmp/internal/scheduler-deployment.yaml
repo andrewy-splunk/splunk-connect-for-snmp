@@ -18,7 +18,7 @@ spec:
       containers:
         - name: sc4snmp-scheduler
           image: {{ .Values.worker.image }}:{{ .Values.worker.version }}
-          imagePullPolicy: Always
+          imagePullPolicy: {{ .Values.worker.imagePullPolicy | deafult "Always" }}
           args:
             [
               "--log={{ .Values.scheduler.logLevel }}",
