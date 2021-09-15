@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sc4snmp-trap
+  namespace: {{ .Release.Namespace | quote }}
+data:
+  config.yaml: |-
+{{ .Values.traps.config | indent 4 }}
