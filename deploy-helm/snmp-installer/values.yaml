@@ -1,5 +1,6 @@
 scheduler:
   logLevel: "WARN"
+  replicas: 1
   index:
     event: em_logs
     metrics: em_metrics
@@ -74,6 +75,7 @@ splunk:
   clusterName: ###CLUSTER_NAME###
 traps:
   logLevel: "WARN"
+  replicas: 1
   loadBalancerIP: ###X.X.X.X###
   resources:
     limits:
@@ -114,6 +116,7 @@ traps:
 mode: "both"
 mib:
   service_host: sc4snmp-mib-server-service
+  replicas: 1
   service_port: "5000"
   resources:
     limits:
@@ -124,10 +127,12 @@ mib:
       memory: 128Mi
 otel:
   service_host: otel-service
+  replicas: 1
   service_metrics_port: "8882"
   service_logs_port: "8881"
 worker:
   logLevel: "WARN"
+  replicas: 1
   resources:
     limits:
       cpu: 200m
