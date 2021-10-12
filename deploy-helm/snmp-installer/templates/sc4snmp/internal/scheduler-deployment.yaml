@@ -47,9 +47,9 @@ spec:
               mountPath: "/work/inventory"
               readOnly: false
         - name: inventory
-            configMap:
-              name: sc4snmp-inventory
-              defaultMode: 0777
+          configMap:
+            name: sc4snmp-inventory
+            defaultMode: 0777
           resources:
 {{ toYaml .Values.mib.resources | indent 12 }}
       securityContext:
