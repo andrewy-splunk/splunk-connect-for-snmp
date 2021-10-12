@@ -46,10 +46,6 @@ spec:
             - name: inventory
               mountPath: "/work/inventory"
               readOnly: false
-        - name: inventory
-          configMap:
-            name: sc4snmp-inventory
-            defaultMode: 0777
           resources:
 {{ toYaml .Values.mib.resources | indent 12 }}
       securityContext:
@@ -68,6 +64,7 @@ spec:
           configMap:
             # Provide the name of the ConfigMap you want to mount.
             name: sc4snmp-inventory
+            defaultMode: 0777
             # An array of keys from the ConfigMap to create as files
             items:
               - key: "inventory.csv"
