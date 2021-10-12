@@ -46,8 +46,14 @@ spec:
             - name: inventory
               mountPath: "/work/inventory"
               readOnly: false
+        - name: inventory
+            configMap:
+              name: sc4snmp-inventory
+              defaultMode: 0777
           resources:
 {{ toYaml .Values.mib.resources | indent 12 }}
+      securityContext:
+        fsGroup: 2000
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
         - name: config
